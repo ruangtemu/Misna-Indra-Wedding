@@ -225,9 +225,9 @@ section {
             #f4f4f2 10%,        /* Bertahan pekat sampai di bawah 'Ngunduh Mantu' */
             
             /* Titik Tengah untuk Efek Seamless/Halus (Inilah kunci penyamaran) */
-            rgba(244, 244, 242, 0.9) 0%, 
-            rgba(244, 244, 242, 0.4) 10%, /* Pudar lembut sebelum kena dahi/kepala */
-            transparent 25%),   /* Menghilang TOTAL di 60% agar wajah bersih */
+            rgba(244, 244, 242, 0.9) 15%, 
+            rgba(244, 244, 242, 0.4) 30%, /* Pudar lembut sebelum kena dahi/kepala */
+            transparent 60%),   /* Menghilang TOTAL di 60% agar wajah bersih */
             
         /* GRADASI BAWAH: Tetap halus (karena kamu sudah oke dengan ini) */
         linear-gradient(to top, 
