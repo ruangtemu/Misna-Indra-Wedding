@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ruang Temu Design</title>
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oya-indra-wedding.vercel.app/">
+    <meta property="og:title" content="Oya & Indra - Ruang Temu Design">
+    <meta property="og:description" content="You're Invited!">
+    
+    <meta property="og:image" content="https://res.cloudinary.com/dzuf3srww/image/upload/q_auto,f_jpg/v1773719747/file_000000000c8c7208a8488f27b640786f_1_g39g0l.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="preloader">
+    <div class="preloader-content-wrapper">
+        <div class="logo-box">
+            <svg class="preloader-logo-svg" viewBox="0 0 100 100">
+                <rect x="10" y="25" width="80" height="50" rx="10" stroke="#00ffff" stroke-width="6" fill="none"/>
+                <path d="M10,25 L50,60 L90,25" stroke="#00ffff" stroke-width="6" fill="none"/>
+            </svg>
+        </div>
+        
+        <div class="preloader-text">
+            <h1 class="ruang-temu">RUANG TEMU</h1>
+            <p class="tagline">tempat berkumpulnya momen dan cerita</p>
+        </div>
+        
+        <div class="preloader-loading-bar"></div>
+    </div>
+</div>
+
+    <audio id="background-music" loop>
+        <source src="https://res.cloudinary.com/dzuf3srww/video/upload/f_auto,q_auto,so_11/v1775013791/KitaUsahakanRumahItu_f1xv8s.mp4" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="phone-screen" id="main-container">
+        
+       <section id="page1" class="wedding-cover">
+    <div class="background-overlay"></div>
+
+    <div class="content-top">
+        <p class="join-us" 
+           data-aos="fade-up" 
+           data-aos-duration="2000">
+            Ngunduh Mantu
+        </p>
+        
+        <div class="main-names">
+            <h1 class="groom" 
+                data-aos="zoom-in" 
+                data-aos-delay="800" 
+                data-aos-duration="2500">
+                INDRA
+            </h1>
+            <h1 class="bridge" 
+                data-aos="zoom-in" 
+                data-aos-delay="1200" 
+                data-aos-duration="2500">
+                MISNA
+            </h1>
+        </div>
+        
+        <p class="wedding-date" 
+           data-aos="fade-up" 
+           data-aos-delay="1800" 
+           data-aos-duration="2000">
+            SABTU, 11 APRIL 2026
+        </p>
+    </div>
+
+    <div class="content-bottom">
+        <div class="recipient-card" 
+             data-aos="fade-up" 
+             data-aos-delay="2200" 
+             data-aos-duration="2000">
+            <p class="dear">PERSONALIZED FOR</p>
+            <h2 class="guest-name" id="guestName">Nama Tamu</h2>
+        </div>
+        
+        <button id="open-invitation" 
+                class="btn-open" 
+                data-aos="zoom-in" 
+                data-aos-delay="2800" 
+                data-aos-duration="1500">
+            OPEN INVITATION
+        </button>
+    </div>
+</section>
+
+
+        
+        <div id="content-wrapper" style="display: none;">
+            
+            <section id="page2" class="ngunduh-section">
+    <style>
+        .ngunduh-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .ngunduh-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: #000;
+            padding: 20px;
+            opacity: 0; /* Sembunyi dulu sebelum animasi */
+        }
+
+        /* Trigger Animasi saat Section Aktif */
+        .ngunduh-section.active .ngunduh-content {
+            animation: fadeInSlow 2.5s ease-in-out forwards;
+        }
+
+        .ngunduh-section.active .mempelai-box {
+            opacity: 0;
+            animation: fadeInUpSlow 2s ease-out forwards;
+        }
+
+        .ngunduh-section.active .ampersand-black-bold {
+            display: inline-block;
+            opacity: 0;
+            animation: fadeInSlow 2s ease-in-out forwards;
+            animation-delay: 1.5s; /* Muncul setelah nama pria */
+        }
+
+        /* Pengaturan Delay Per Elemen (Sangat Lambat) */
+        .delay-pria { animation-delay: 0.5s; }
+        .delay-wanita { animation-delay: 2.5s; }
+
+        /* Keyframes Animasi Lambat */
+        @keyframes fadeInSlow {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUpSlow {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Tambahan: Efek Mengambang Halus pada Teks agar tidak kaku */
+        .info-wrapper {
+            animation: floatingText 6s ease-in-out infinite;
+        }
+
+        @keyframes floatingText {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+
+    <div class="slider-bg">
+        <div class="slide" style="background-image: url('https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012880/Wedding7_fmvmcd.jpg');"></div>
+        <div class="slide" style="background-image: url('https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012885/Wedding8_xxahrc.jpg');"></div>
+        <div class="slide" style="background-image: url('https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012872/Wedding4_w97zqm.jpg');"></div>
+    </div>
+    
+    <div class="ngunduh-overlay"></div>
+    
+    <div class="ngunduh-content">
+        <h2 class="section-title-black">
+            Ngunduh Mantu
+        </h2>
+        
+        <div class="info-wrapper">
+            <div class="mempelai-box delay-pria">
+                <h1 class="bride-name-one-line">Indra Bangsawan, S.T.</h1>
+                <p class="nickname-bold">(Wawan)</p>
+                <p class="role-text-black-bold">Putra ke-4 dari<br>Bpk. Mustafa Ali & Ibu Salliah</p>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <span class="ampersand-black-bold">&</span>
+            </div>
+            
+            <div class="mempelai-box delay-wanita">
+                <h1 class="bride-name-one-line">Misnawati</h1>
+                <p class="nickname-bold">(Misna)</p>
+                <p class="role-text-black-bold">Putri ke-6 dari<br>Bpk. Harun (Alm) & Ibu Supiah</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Memicu animasi hanya ketika user sampai di halaman ini
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sectionObserver.observe(document.querySelector('#page2'));
+    </script>
+</section>
+
+
+<section id="page3" class="countdown-section">
+    <style>
+        @keyframes fadeInUpCustom {
+            0% { 
+                opacity: 0; 
+                transform: translateY(30px); 
+                filter: blur(5px);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0); 
+                filter: blur(0);
+            }
+        }
+
+        /* Awalnya sembunyikan semua teks */
+        .reveal-text {
+            opacity: 0;
+        }
+
+        /* Class ini akan ditambahkan lewat JavaScript saat di-scroll */
+        .animate-now {
+            animation: fadeInUpCustom 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        /* Delay agar muncul bergantian */
+        .delay-title { animation-delay: 0.6s; }
+        .delay-timer { animation-delay: 0.12s; }
+        .delay-quote { animation-delay: 1.2s; }
+        .delay-author { animation-delay: 1.3s; }
+    </style>
+
+    <div class="countdown-overlay"></div>
+
+    <div class="countdown-content">
+        <div class="timer-wrapper-v2">
+            <h2 class="timer-title-v2 reveal-text delay-title">
+                Counting Down to The Big Moment
+            </h2>
+            
+            <div id="countdown-timer" class="timer-display-v2 reveal-text delay-timer">
+                <div class="timer-item">
+                    <span id="days" class="timer-num">00</span>
+                    <span class="timer-label">Hari</span>
+                </div>
+                <div class="timer-item">
+                    <span id="hours" class="timer-num">00</span>
+                    <span class="timer-label">Jam</span>
+                </div>
+                <div class="timer-item">
+                    <span id="minutes" class="timer-num">00</span>
+                    <span class="timer-label">Menit</span>
+                </div>
+                <div class="timer-item">
+                    <span id="seconds" class="timer-num">00</span>
+                    <span class="timer-label">Detik</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="quotes-container-v2">
+            <p class="quotes-text-v2 reveal-text delay-quote">
+                "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang."
+            </p>
+            <p class="quotes-author-v2 reveal-text delay-author">QS. Ar-Rum: 21</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const elements = entry.target.querySelectorAll('.reveal-text');
+                elements.forEach(el => {
+                    el.classList.add('animate-now');
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    observer.observe(document.querySelector('#page3'));
+</script>
+
+            <section id="halaman4">
+    <div class="bg-slider">
+        <div class="bg-slide"></div>
+        <div class="bg-slide"></div>
+        <div class="bg-slide"></div>
+    </div>
+
+    <div class="card-frame bw-theme"> <h3 class="header-label">Save The Date</h3>
+        <div class="date-section">
+            <p class="day">Sabtu</p>
+            <h1 class="main-date">11</h1>
+            <p class="month-year">April | 2026</p>
+        </div>
+        <div class="divider"></div>
+        <div class="info-box">
+            <p class="info-time">Pukul 10.00 - Selesai</p>
+            <p class="address-text">
+                <span class="venue-name">Jl. Impres Tanjung Leban</span><br>
+                Kec. Kubu, Kabupaten Rokan Hilir,<br>
+                Provinsi Riau
+            </p>
+        </div>
+        </div>
+</section>
+
+           <section id="halaman5">
+    <section class="gallery-page">
+        <div class="gallery-content">
+            
+            <div class="aesthetic-header">
+                <p class="pre-title reveal">OUR BLISSFUL MOMENTS</p>
+                <h2 class="main-title reveal">Gallery</h2>
+                <div class="elegant-line reveal"></div>
+            </div>
+            
+            <div class="masonry-grid">
+                <div class="masonry-item from-left reveal">
+                    <div class="img-wrapper">
+                        <img src="https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012880/Cover_ry6krj.jpg" alt="Cover Portrait">
+                    </div>
+                </div>
+
+                <div class="masonry-item item-short from-right reveal">
+                    <div class="img-wrapper">
+                        <img src="https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012863/Wedding6_piwnkm.jpg" alt="Wedding 6 Short">
+                    </div>
+                </div>
+
+                <div class="masonry-item item-tall from-left reveal">
+                    <div class="img-wrapper">
+                        <img src="https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012872/Wedding4_w97zqm.jpg" alt="Wedding 4 Tall">
+                    </div>
+                </div>
+
+                <div class="masonry-item from-right reveal">
+                    <div class="img-wrapper">
+                        <img src="https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012857/Wedding1_eqkn6d.jpg" alt="Wedding 1 Portrait">
+                    </div>
+                </div>
+
+                <div class="masonry-item from-left reveal">
+                    <div class="img-wrapper">
+                        <img src="https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012877/NgunduhMantuOf_s6raz0.jpg" alt="Ngunduh Mantu Portrait">
+                    </div>
+                </div>
+
+                <div class="masonry-item from-right reveal">
+                    <div class="img-wrapper">
+                        <img src="https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012880/Wedding7_fmvmcd.jpg" alt="Wedding 7 Portrait">
+                    </div>
+                </div>
+                
+                <div class="masonry-item from-left reveal">
+                    <div class="img-wrapper">
+                        <img src="https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012882/Wedding5_c0wdbv.jpg" alt="Wedding 5 Portrait">
+                    </div>
+                </div>
+
+                <div class="masonry-item item-short from-right reveal">
+                    <div class="img-wrapper">
+                        <img src="https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012864/Countdown_yzamyq.jpg" alt="Countdown Landscape">
+                    </div>
+                </div>
+
+                <div class="masonry-item item-tall from-left reveal">
+                    <div class="img-wrapper">
+                        <img src="https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012885/Wedding8_xxahrc.jpg" alt="Wedding 8 Tall">
+                    </div>
+                </div>
+
+                <div class="masonry-item item-short from-right reveal">
+                    <div class="img-wrapper">
+                        <img src="https://res.cloudinary.com/dzuf3srww/image/upload/w_800,f_auto,q_auto/v1775012864/Wedding3_tdbiwj.jpg" alt="Wedding 3 Landscape">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<style>
+/* --- KODE ASLI ANDA (TIDAK DIHAPUS) --- */
+.gallery-page { padding: 60px 15px; background: #fff; overflow-x: hidden; }
+.masonry-grid { columns: 3 250px; column-gap: 20px; max-width: 1200px; margin: 0 auto; }
+.img-wrapper { position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+.masonry-item img { width: 100%; height: auto; display: block; transition: transform 0.5s ease; }
+.masonry-item:hover .img-wrapper { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.15); }
+.masonry-item:hover img { transform: scale(1.08); }
+.aesthetic-header { text-align: center; margin-bottom: 40px; }
+.main-title { font-family: serif; font-size: 2.8rem; color: #333; margin: 10px 0; }
+.pre-title { letter-spacing: 5px; color: #aaa; font-size: 0.8rem; }
+.elegant-line { width: 40px; height: 2px; background: #d4af37; margin: 0 auto; }
+@media (max-width: 768px) { .masonry-grid { columns: 2; } }
+@media (max-width: 480px) { .masonry-grid { columns: 1; } }
+
+/* --- LOGIKA ANIMASI BARU (AKTIF SAAT SCROLL) --- */
+
+/* Keadaan awal: Sembunyi */
+.reveal {
+    opacity: 0;
+    transition: all 2s ease-out;
+}
+
+/* Saat class 'active' ditambahkan oleh JS */
+.reveal.active {
+    opacity: 1;
+    transform: translate(0, 0) !important;
+}
+
+/* Variasi arah muncul */
+.pre-title.reveal, .main-title.reveal, .elegant-line.reveal {
+    transform: translateY(30px);
+}
+
+.masonry-item.from-left.reveal {
+    transform: translateX(-50px);
+}
+
+.masonry-item.from-right.reveal {
+    transform: translateX(50px);
+}
+
+/* Jeda (Delay) muncul satu per satu agar estetik */
+.active.pre-title { transition-delay: 5s; }
+.active.main-title { transition-delay: 6s; }
+.active.elegant-line { transition-delay: 7s; }
+
+/* Delay untuk foto-foto di grid */
+.masonry-grid .reveal.active:nth-child(1) { transition-delay: 1s; }
+.masonry-grid .reveal.active:nth-child(2) { transition-delay: 2s; }
+.masonry-grid .reveal.active:nth-child(3) { transition-delay: 3s; }
+.masonry-grid .reveal.active:nth-child(4) { transition-delay: 4s; }
+.masonry-grid .reveal.active:nth-child(5) { transition-delay: 5s; }
+.masonry-grid .reveal.active:nth-child(6) { transition-delay: 6s; }
+.masonry-grid .reveal.active:nth-child(7) { transition-delay: 7s; }
+.masonry-grid .reveal.active:nth-child(8) { transition-delay: 8s; }
+.masonry-grid .reveal.active:nth-child(9) { transition-delay: 9s; }
+.masonry-grid .reveal.active:nth-child(10) { transition-delay: 10s; }
+</style>
+
+<script>
+/* SCRIPT UNTUK MENDETEKSI SCROLL */
+document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+        threshold: 15% // Animasi jalan jika 15% elemen sudah masuk layar
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Opsional: stop observe jika ingin animasi hanya jalan sekali
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Daftarkan semua elemen yang ingin di-reveal
+    document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
+
+
+
+
+
+           <section id="halaman6">
+    <div class="rsvp-container reveal">
+        <div class="rsvp-header">
+            <h2 class="elegant-title">Guest Book</h2>
+            <p class="subtitle">Berikan doa restu & konfirmasi kehadiran Anda</p>
+        </div>
+
+        <div class="rsvp-stats">
+            <div class="stat-item">
+                <span id="total-pesan">0</span>
+                <p>Pesan</p>
+            </div>
+            <div class="stat-item">
+                <span id="total-hadir">0</span>
+                <p>Hadir</p>
+            </div>
+            <div class="stat-item">
+                <span id="total-tidak">0</span>
+                <p>Absen</p>
+            </div>
+        </div>
+
+        <form id="rsvp-form" class="rsvp-form">
+            <div class="input-group">
+                <input type="text" id="nama" placeholder="Nama Anda" required>
+            </div>
+            <div class="input-group">
+                <textarea id="pesan" placeholder="Berikan ucapan & doa restu..." required></textarea>
+            </div>
+            <div class="input-group">
+                <select id="kehadiran" required>
+                    <option value="" disabled selected>Konfirmasi Kehadiran</option>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Tidak Hadir">Tidak Hadir</option>
+                </select>
+            </div>
+            <button type="button" id="btn-kirim">Kirim Pesan</button>
+        </form>
+
+        <div class="divider-line"></div>
+
+        <div class="messages-scroll-box">
+            <div id="container-pesan" class="messages-list">
+                <p class="loading-text">Memuat pesan...</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+            
+            <hr class="separator">
+
+          <section id="halaman7">
+    <div class="phone-screen">
+        <div class="header">
+            <div class="subtitle animate delay-1">Tanda Kasih</div>
+            <h1 class="title animate delay-2">Wedding Gift</h1>
+            <p class="desc animate delay-3">Doa restu Anda merupakan hadiah terindah bagi kami. Namun apabila ingin memberikan tanda kasih, dapat melalui:</p>
+        </div>
+        
+        <div class="card-box">
+            <div class="gift-card animate delay-4">
+                <div class="logo-wrapper">
+                    <img src="https://res.cloudinary.com/dzuf3srww/image/upload/v1775174839/bank-bsi-logo_uamivq.png" alt="BSI" class="bank-logo">
+                </div>
+                <div class="acc-num">7262799648</div>
+                <div class="acc-name">a.n Misnawati</div>
+                <button class="btn-copy" onclick="copyNum('7262799648', this)">
+                    <i class="fa-regular fa-copy"></i> Salin Nomor
+                </button>
+            </div>
+            
+            <div class="gift-card animate delay-5">
+                <div class="logo-wrapper">
+                    <img src="https://res.cloudinary.com/dzuf3srww/image/upload/v1775174839/bank-rakyat-indonesia-_bri_-674x256_nuackj.png" alt="BRI" class="bank-logo">
+                </div>
+                <div class="acc-num">211501005959506</div>
+                <div class="acc-name">a.n Indra Bangsawan</div>
+                <button class="btn-copy" onclick="copyNum('211501005959506', this)">
+                    <i class="fa-regular fa-copy"></i> Salin Nomor
+                </button>
+            </div>
+        </div>
+        
+        <div class="footer animate delay-footer">
+            <h2 class="thanks">Terima Kasih</h2>
+            <div class="names">Indra & Misna</div>
+        </div>
+    </div>
+</section>
+
+
+            <hr class="separator">
+
+            <section id="halaman9">
+                <section class="hero-section">
+                    <div class="bg-slider-hero">
+                        <div class="bg-slide slide-1"></div>
+                        <div class="bg-slide slide-2"></div>
+                        <div class="bg-slide slide-3"></div>
+                        <div class="bg-slide slide-4"></div>
+                        <div class="bg-slide slide-5"></div>
+                        <div class="bg-slide slide-6"></div>
+                        <div class="bg-slide slide-7"></div>
+                    </div>
+
+                    <div class="overlay"></div>
+
+                    <div class="content-wrapper">
+                        <div class="logo-box">
+                            <svg viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#00f2fe;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#00c9ff;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <path d="M10,20 Q10,10 20,10 L80,10 Q90,10 90,20 L90,60 Q90,70 80,70 L20,70 Q10,70 10,60 Z" fill="none" stroke="url(#logoGrad)" stroke-width="8" />
+                                <path d="M28,38 L50,56 L72,38" fill="none" stroke="url(#logoGrad)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M28,38 L28,58 M72,38 L72,58" fill="none" stroke="url(#logoGrad)" stroke-width="7" stroke-linecap="round" />
+                            </svg>
+                        </div>
+
+                        <div class="line-deco"></div>
+                        <h1 class="brand-name">RUANG TEMU</h1>
+                        <p class="brand-sub">Invitation Design</p>
+
+                        <p class="description">
+                            Ciptakan momen tak terlupakan dengan undangan digital yang elegan, eksklusif, dan personal.
+                        </p>
+
+                        <a href="https://wa.me/6285624359925?text=Kak%20saya%20mau%20info%20harga%20list%20undangannnya" class="cta-button" target="_blank">
+                            Konsultasi Sekarang
+                        </a>
+
+                        <br>
+
+                        <div class="voucher-container" onclick="copyVoucher()">
+                            <div class="voucher-badge">POTONGAN 10%</div>
+                            <span class="voucher-label">Gunakan Kode Promo</span>
+                            <span class="voucher-code" id="promoCode">TEMUBAHAGIA</span>
+                            <span class="copy-hint">(Klik untuk salin kode)</span>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/ruangtemu.design" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://wa.me/6285624359925?text=Kak%20saya%20mau%20list%20harga%20undangannnya" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+        </div> </div> <div id="toast">Berhasil Tersalin!</div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script src="script.js"></script>
+
+       <div id="lightbox-container" style="display:none;">
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+      AOS.init({
+        duration: 2500,        // Kita set 2.5 detik biar sesuai permintaanmu yang "lebih lambat"
+        once: false,           // Supaya animasi aktif terus (nggak cuma sekali)
+        mirror: true,          // Supaya pas scroll ke atas animasi muncul lagi
+        offset: 50,            // Jarak pemicu biar lebih sensitif
+        anchorPlacement: 'top-bottom', // Biar pas di layar langsung gerak
+        easing: 'ease-in-out-sine'     // Biar gerakannya halus/smooth
+      });
+    </script>
+
+</body>
+</html>
+
+
