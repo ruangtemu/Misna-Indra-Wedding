@@ -222,12 +222,12 @@ section {
         /* GRADASI ATAS: Dibuat HALUS (Seamless) sepekat gradasi bawah */
         linear-gradient(to bottom, 
             #f4f4f2 0%,         /* Pekat di paling atas untuk teks */
-            #f4f4f2 30%,        /* Bertahan pekat sampai di bawah 'Ngunduh Mantu' */
+            #f4f4f2 40%,        /* Bertahan pekat sampai di bawah 'Ngunduh Mantu' */
             
             /* Titik Tengah untuk Efek Seamless/Halus (Inilah kunci penyamaran) */
-            rgba(244, 244, 242, 0.9) 35%, 
+            rgba(244, 244, 242, 0.9) 60%, 
             rgba(244, 244, 242, 0.4) 45%, /* Pudar lembut sebelum kena dahi/kepala */
-            transparent 50%),   /* Menghilang TOTAL di 60% agar wajah bersih */
+            transparent 25%),   /* Menghilang TOTAL di 60% agar wajah bersih */
             
         /* GRADASI BAWAH: Tetap halus (karena kamu sudah oke dengan ini) */
         linear-gradient(to top, 
