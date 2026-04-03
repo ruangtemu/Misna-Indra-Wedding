@@ -230,9 +230,9 @@ section {
             
         /* GRADASI BAWAH: Tetap halus (karena kamu sudah oke dengan ini) */
         linear-gradient(to top, 
-            rgba(255,255,255,1) 5%,   
-            rgba(255,255,255,0.95) 15%, 
-            transparent 30%);         
+            rgba(255,255,255,1) 10%,   
+            rgba(255,255,255,0.95) 20%, 
+            transparent 35%);         
     z-index: 1;
     pointer-events: none;
 }
