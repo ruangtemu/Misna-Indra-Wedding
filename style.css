@@ -219,15 +219,14 @@ section {
     width: 100%;
     height: 100%; 
     background: 
-        /* GRADASI ATAS: Dibuat HALUS (Seamless) sepekat gradasi bawah */
-        linear-gradient(to bottom, 
-            #f4f4f2 0%,         /* Pekat di paling atas untuk teks */
-            #f4f4f2 40%,        /* Bertahan pekat sampai di bawah 'Ngunduh Mantu' */
-            
-            /* Titik Tengah untuk Efek Seamless/Halus (Inilah kunci penyamaran) */
-            rgba(244, 244, 242, 0.9) 60%, 
-            rgba(244, 244, 242, 0.4) 45%, /* Pudar lembut sebelum kena dahi/kepala */
-            transparent 25%),   /* Menghilang TOTAL di 60% agar wajah bersih */
+   /* GRADASI ATAS: Diperhalus transisinya */
+    linear-gradient(to bottom, 
+        #f4f4f2 0%, 
+        #f4f4f2 15%,                      /* Kurangi sedikit agar lebih lega */
+        rgba(244, 244, 242, 0.8) 25%,     /* Transisi lebih rendah opacity-nya */
+        rgba(244, 244, 242, 0.3) 45%,     /* Ditarik lebih jauh ke bawah agar pudar */
+        transparent 60%                   /* Berhenti total di 60% */
+    )
             
         /* GRADASI BAWAH: Tetap halus (karena kamu sudah oke dengan ini) */
         linear-gradient(to top, 
