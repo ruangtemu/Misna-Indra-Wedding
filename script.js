@@ -13,21 +13,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainContainer = document.getElementById('main-container');
     const music = document.getElementById('background-music');
     document.addEventListener('DOMContentLoaded', () => {
-    const loader = document.getElementById('preloader');
-    
-    if (loader) {
-        // Beri jeda sedikit (500ms) agar logo Ruang Temu sempat terlihat
-        setTimeout(() => {
-            loader.style.transition = 'opacity 0.6s ease';
-            loader.style.opacity = '0';
+    // Langsung jalankan fungsi tanpa menunggu event 'load'
+const loader = document.getElementById('preloader');
 
-            // Setelah transisi selesai, hilangkan total dari layar
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 600);
-        }, 500); 
-    }
-});
+if (loader) {
+    // Paksa preloader hilang setelah 2 detik, apapun kondisinya
+    setTimeout(() => {
+        loader.style.transition = 'opacity 0.6s ease';
+        loader.style.opacity = '0';
+
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 600);
+    }, 2000); // 2000ms = 2 detik. Bisa kamu kurangi jadi 1500 jika ingin lebih cepat.
+}
+
 
     const pageOrder = ['page1', 'page2', 'page3', 'halaman4', 'halaman5', 'halaman6', 'halaman7', 'halaman9'];
     let touchStartY = null;
