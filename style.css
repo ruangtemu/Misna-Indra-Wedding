@@ -196,14 +196,14 @@ section {
    TOMBOL OPEN - OPTIMIZED FOR IPHONE 12
    ========================================= */
 .btn-open {
-    /* --- JAMU KHUSUS IPHONE (Ditaruh di paling atas) --- */
+    /* --- JAMU KHUSUS IPHONE (Hardware Acceleration) --- */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transform: translate3d(0,0,0);
     position: relative; 
     z-index: 10; 
 
-.btn-open {
+    /* --- STYLE VISUAL --- */
     background: #1a1a1a !important;
     color: #ffffff !important;
     border: none;
@@ -214,14 +214,20 @@ section {
     letter-spacing: 2px;
     cursor: pointer;
     box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    /* Transisi halus saat diklik */
+    
+    /* Transisi halus */
     transition: transform 0.3s ease;
 }
 
+/* Efek saat diklik */
 .btn-open:active {
-    transform: scale(0.95);
+    /* Tambahkan translate3d lagi agar akselerasi GPU tetap aktif */
+    transform: scale(0.95) translate3d(0,0,0);
 }
 
+/* =========================================
+   OVERLAY GRADASI - SEAMLESS LOOK
+   ========================================= */
 .background-overlay {
     position: absolute;
     top: 0;
@@ -229,23 +235,21 @@ section {
     width: 100%;
     height: 100%; 
     background: 
-        /* GRADASI ATAS: Dibuat HALUS (Seamless) sepekat gradasi bawah */
+        /* GRADASI ATAS: Halus & Menutup Teks */
         linear-gradient(to bottom, 
-            #f4f4f2 0%,         /* Pekat di paling atas untuk teks */
-            #f4f4f2 30%,        /* Bertahan pekat sampai di bawah 'Ngunduh Mantu' */
-            
-            /* Titik Tengah untuk Efek Seamless/Halus (Inilah kunci penyamaran) */
+            #f4f4f2 0%,         
+            #f4f4f2 30%,        
             rgba(244, 244, 242, 0.9) 35%, 
-            rgba(244, 244, 242, 0.4) 40%, /* Pudar lembut sebelum kena dahi/kepala */
-            transparent 45%),   /* Menghilang TOTAL di 60% agar wajah bersih */
+            rgba(244, 244, 242, 0.4) 40%, 
+            transparent 45%),   
             
-        /* GRADASI BAWAH: Tetap halus (karena kamu sudah oke dengan ini) */
+        /* GRADASI BAWAH */
         linear-gradient(to top, 
             rgba(255,255,255,1) 0%,   
             rgba(255,255,255,0.95) 23%, 
             transparent 30%);         
     z-index: 1;
-    pointer-events: none;
+    pointer-events: none; /* Biar jempol bisa klik tombol di bawahnya */
 }
 
 /* =========================================
