@@ -1,29 +1,3 @@
-/* Taruh di bagian paling atas atau cari bagian Preloader */
-
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff; /* Sesuaikan warna backgroundmu */
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* --- TAMBAHKAN INI --- */
-    pointer-events: none; 
-}
-
-.preloader-logo-svg {
-    width: 100px;
-    height: 100px;
-    /* --- TAMBAHKAN INI --- */
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-
 /* =========================================
    1. GLOBAL VARIABLES, RESET & FONT
    ========================================= */
@@ -1498,8 +1472,38 @@ section {
 
 
 /* =========================================
-   PRELOADER RUANG TEMU - CSS
+   PRELOADER RUANG TEMU - CSS (OPTIMIZED)
    ========================================= */
+#preloader {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: #ffffff; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 99999; 
+    flex-direction: column;
+    
+    /* Paksa iPhone untuk merender layer ini dengan benar */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+    /* Gunakan transition yang sudah kamu buat */
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* Class ini akan dipanggil oleh JavaScript nanti */
+#preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Baru aktif saat sudah selesai loading */
+}
+
+/* ... Sisa CSS (logo-box, preloader-text, dll) tetap sama ... */
+
 #preloader {
     position: fixed;
     top: 0; left: 0;
