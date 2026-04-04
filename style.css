@@ -192,17 +192,16 @@ section {
     margin: 0;
 }
 
-/* Tombol Open Invitation */
-.tombol-open {
-    /* Tambahan cerdasmu tadi */
+/* =========================================
+   TOMBOL OPEN - OPTIMIZED FOR IPHONE 12
+   ========================================= */
+.btn-open {
+    /* --- JAMU KHUSUS IPHONE (Ditaruh di paling atas) --- */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transform: translate3d(0,0,0);
-    
-    /* Pastikan ada z-index agar tidak tertutup background */
     position: relative; 
     z-index: 10; 
-}
 
 .btn-open {
     background: #1a1a1a !important;
