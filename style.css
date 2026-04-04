@@ -1,3 +1,29 @@
+/* Taruh di bagian paling atas atau cari bagian Preloader */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Sesuaikan warna backgroundmu */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* --- TAMBAHKAN INI --- */
+    pointer-events: none; 
+}
+
+.preloader-logo-svg {
+    width: 100px;
+    height: 100px;
+    /* --- TAMBAHKAN INI --- */
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+
 /* =========================================
    1. GLOBAL VARIABLES, RESET & FONT
    ========================================= */
