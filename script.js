@@ -12,7 +12,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const contentWrapper = document.getElementById('content-wrapper');
     const mainContainer = document.getElementById('main-container');
     const music = document.getElementById('background-music');
+    window.addEventListener('load', () => {
     const loader = document.getElementById('preloader');
+    if (loader) {
+        // Efek transisi halus biar nggak kaget
+        loader.style.transition = 'opacity 0.8s ease';
+        loader.style.opacity = '0';
+
+        // Bagian paling penting buat iPhone: 
+        // Setelah 0.8 detik (saat sudah transparan), kita hilangkan total dari layar
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 800);
+    }
+});
+
     const pageOrder = ['page1', 'page2', 'page3', 'halaman4', 'halaman5', 'halaman6', 'halaman7', 'halaman9'];
     let touchStartY = null;
     let isInvitationOpened = false;
