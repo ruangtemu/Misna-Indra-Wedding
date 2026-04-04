@@ -12,21 +12,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const contentWrapper = document.getElementById('content-wrapper');
     const mainContainer = document.getElementById('main-container');
     const music = document.getElementById('background-music');
-    window.addEventListener('load', () => {
-    // Tambahkan pembungkus ini agar JS menunggu seluruh halaman (gambar & aset) selesai dimuat
-window.addEventListener('load', () => {
+    document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('preloader');
     
     if (loader) {
-        // 1. Beri efek transisi halus (opacity jadi 0)
-        loader.style.transition = 'opacity 0.8s ease';
-        loader.style.opacity = '0';
-
-        // 2. Bagian krusial untuk iPhone:
-        // Tunggu sampai transisi selesai (800ms), lalu hilangkan display-nya
+        // Beri jeda sedikit (500ms) agar logo Ruang Temu sempat terlihat
         setTimeout(() => {
-            loader.style.display = 'none';
-        }, 800);
+            loader.style.transition = 'opacity 0.6s ease';
+            loader.style.opacity = '0';
+
+            // Setelah transisi selesai, hilangkan total dari layar
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 600);
+        }, 500); 
     }
 });
 
