@@ -13,14 +13,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainContainer = document.getElementById('main-container');
     const music = document.getElementById('background-music');
     window.addEventListener('load', () => {
+    // Tambahkan pembungkus ini agar JS menunggu seluruh halaman (gambar & aset) selesai dimuat
+window.addEventListener('load', () => {
     const loader = document.getElementById('preloader');
+    
     if (loader) {
-        // Efek transisi halus biar nggak kaget
+        // 1. Beri efek transisi halus (opacity jadi 0)
         loader.style.transition = 'opacity 0.8s ease';
         loader.style.opacity = '0';
 
-        // Bagian paling penting buat iPhone: 
-        // Setelah 0.8 detik (saat sudah transparan), kita hilangkan total dari layar
+        // 2. Bagian krusial untuk iPhone:
+        // Tunggu sampai transisi selesai (800ms), lalu hilangkan display-nya
         setTimeout(() => {
             loader.style.display = 'none';
         }, 800);
