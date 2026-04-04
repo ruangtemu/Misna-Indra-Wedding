@@ -1487,11 +1487,22 @@ section {
     z-index: 99999; 
     flex-direction: column;
     
-    /* Perbaikan khusus iPhone agar layer tidak stuck */
+    /* Supaya transisi di iPhone 12 mulus dan tidak kaku */
+    will-change: opacity, visibility;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    perspective: 1000;
+    
+    /* Durasi hilang dibuat 0.5 detik saja agar terasa cepat */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Pastikan class ini juga ada di CSS kamu */
+#preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
     
     /* Transisi halus */
     transition: opacity 0.8s ease, visibility 0.8s ease;
