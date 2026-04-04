@@ -12,22 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const contentWrapper = document.getElementById('content-wrapper');
     const mainContainer = document.getElementById('main-container');
     const music = document.getElementById('background-music');
-    document.addEventListener('DOMContentLoaded', () => {
-    // Langsung jalankan fungsi tanpa menunggu event 'load'
-const loader = document.getElementById('preloader');
-
-if (loader) {
-    // Paksa preloader hilang setelah 2 detik, apapun kondisinya
-    setTimeout(() => {
-        loader.style.transition = 'opacity 0.6s ease';
-        loader.style.opacity = '0';
-
-        setTimeout(() => {
-            loader.style.display = 'none';
-        }, 600);
-    }, 2000); // 2000ms = 2 detik. Bisa kamu kurangi jadi 1500 jika ingin lebih cepat.
-}
-
+    const loader = document.getElementById('preloader');
 
     const pageOrder = ['page1', 'page2', 'page3', 'halaman4', 'halaman5', 'halaman6', 'halaman7', 'halaman9'];
     let touchStartY = null;
