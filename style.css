@@ -193,6 +193,17 @@ section {
 }
 
 /* Tombol Open Invitation */
+.tombol-open {
+    /* Tambahan cerdasmu tadi */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0,0,0);
+    
+    /* Pastikan ada z-index agar tidak tertutup background */
+    position: relative; 
+    z-index: 10; 
+}
+
 .btn-open {
     background: #1a1a1a !important;
     color: #ffffff !important;
